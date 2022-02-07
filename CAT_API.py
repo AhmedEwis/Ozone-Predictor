@@ -82,6 +82,8 @@ def main():
         result=predict_ozone(WD_Hour,WS_Hour,Temp_Hour,SR_Hour,RH_Hour,NO2)
     st.success('The output is {}'.format(result))
     if st.button("About"):
+        st.text("Author: Ahmed Ewis")
+        st.text("Supervised By: Dr. Fahad Al Fadli")
         st.text("Model Name: CatBoost Regressor")
         st.text("Built with Streamlit")
 
