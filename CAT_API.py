@@ -1,3 +1,12 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Nov 2021
+Author: Ahmed Ewis
+Supervised By: Dr. Fahad Al Fadli
+               Dr. Nawaf Al Hajri
+"""
+
+
 import numpy as np
 import pickle
 import pandas as pd
@@ -73,8 +82,8 @@ def main():
         result=predict_ozone(WD_Hour,WS_Hour,Temp_Hour,SR_Hour,RH_Hour,NO2)
     st.success('The output is {}'.format(result))
     if st.button("About"):
-        st.text("Author: Ahmed Ewis")
-        st.text("Supervised By: Dr. Fahad Al Fadli")
+        st.text("Model Name: CatBoost Regressor")
+        st.text("Built with Streamlit")
 
 if __name__=='__main__':
     main()
