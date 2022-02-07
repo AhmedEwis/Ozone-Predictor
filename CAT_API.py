@@ -65,7 +65,7 @@ def main():
     st.title("Welcome All to the Ozone Predictor")
     html_temp = """
     <div style="background-color:tomato;padding:10px">
-    <h2 style="color:white;text-align:center;">Ozone Predictor ML App in the North of Kuwait </h2>
+    <h2 style="color:white;text-align:center;">O3 Predictor ML App in the North of Kuwait </h2>
     </div>
     """
     st.markdown(html_temp,unsafe_allow_html=True)
@@ -83,7 +83,7 @@ def main():
     st.success('The output is {}'.format(result))
     if st.button("About"):
         st.text("Author: Ahmed Ewis")
-        st.text("Supervised By: Dr. Fahad Al Fadli")
+        st.text("Supervised By: Dr. Fahad Al Fadli and Dr. Nawaf Al Hajri")
         st.text("Model Name: CatBoost Regressor")
         st.text("Built with Streamlit")
 
