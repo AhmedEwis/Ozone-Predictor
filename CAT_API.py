@@ -18,7 +18,7 @@ def welcome():
     return "Welcome All"
 
 #@app.route('/predict',methods=["Get"])
-def predict_ozone(WS_Hour,Temp_Hour,SR_Hour,RH_Hour,NO2,SO2,WD_Hour):
+def predict_ozone(WD_Hour,WS_Hour,Temp_Hour,SR_Hour,RH_Hour,NO2):
     
     """Let's Authenticate the Banks Note 
     This is using docstrings for specifications.
@@ -70,7 +70,7 @@ def main():
     
     result=""
     if st.button("Predict"):
-        result=predict_ozone(WS_Hour,Temp_Hour,SR_Hour,RH_Hour,NO2,WD_Hour)
+        result=predict_ozone(WD_Hour,WS_Hour,Temp_Hour,SR_Hour,RH_Hour,NO2)
     st.success('The output is {}'.format(result))
     if st.button("About"):
         st.text("Author: Ahmed Ewis")
