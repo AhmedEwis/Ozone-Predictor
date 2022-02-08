@@ -16,6 +16,9 @@ from catboost import CatBoostRegressor
 
 from PIL import Image
 
+st.write("""Author: Ahmed Ewis""")
+st.write("""Supervised By: Dr. Fahad Al Fadli and Dr. Nawaf Al Hajri""")
+
 #app=Flask(__name__)
 #Swagger(app)
 
