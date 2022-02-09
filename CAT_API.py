@@ -33,31 +33,7 @@ def welcome():
 #@app.route('/predict',methods=["Get"])
 def predict_ozone(WD_Hour,WS_Hour,Temp_Hour,SR_Hour,RH_Hour,NO2):
     
-    """Let's Authenticate the Banks Note 
-    This is using docstrings for specifications.
-    ---
-    parameters:  
-      - name: variance
-        in: query
-        type: number
-        required: true
-      - name: skewness
-        in: query
-        type: number
-        required: true
-      - name: curtosis
-        in: query
-        type: number
-        required: true
-      - name: entropy
-        in: query
-        type: number
-        required: true
-    responses:
-        200:
-            description: The output values
-        
-    """
+
    
     prediction=model_cat.predict([[WD_Hour,WS_Hour,Temp_Hour,SR_Hour,RH_Hour,NO2]])
     print(prediction)
