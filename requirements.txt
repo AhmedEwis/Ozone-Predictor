@@ -14,5 +14,6 @@ flasgger==0.9.4
 streamlit
 catboost
 pycaret
+jolib
 
 
