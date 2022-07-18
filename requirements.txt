@@ -16,3 +16,4 @@ catboost
 jolib
 booster
 xgboost
+pycaret==1.0.0
