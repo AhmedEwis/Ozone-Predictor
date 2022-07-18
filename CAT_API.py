@@ -40,7 +40,7 @@ def predict_ozone(Year,Month,Quarter,Dayofyear,Dayofmonth,Weekofyear,Dayofweek,D
     
 
    
-    prediction=model_cat.predict(model_cat)
+    prediction=predict_model(model_cat)
     print(prediction)
     return prediction
 
