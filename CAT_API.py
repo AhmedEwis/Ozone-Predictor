@@ -13,6 +13,8 @@ import pandas as pd
 #from flasgger import Swagger
 import streamlit as st 
 from catboost import CatBoostRegressor
+from sklearn.externals import joblib
+import joblib
 
 from PIL import Image
 
