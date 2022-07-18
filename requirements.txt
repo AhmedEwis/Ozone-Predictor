@@ -13,7 +13,6 @@ click==8.0
 flasgger==0.9.4
 streamlit
 catboost
-pycaret==2.3
 jolib
 booster
 xgboost
