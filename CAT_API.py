@@ -23,7 +23,7 @@ st.write("""Kuwait University""")
 #app=Flask(__name__)
 #Swagger(app)
 
-pickle_in = open("model_cat_new.pkl","rb")
+pickle_in = open("Final_tuned_blender_air_pollution.pkl","rb")
 model_cat=pickle.load(pickle_in)
 
 #@app.route('/')
@@ -31,11 +31,11 @@ def welcome():
     return "Welcome All"
 
 #@app.route('/predict',methods=["Get"])
-def predict_ozone(WD_Hour,WS_Hour,Temp_Hour,SR_Hour,RH_Hour,NO2):
+def predict_ozone(Year,Month,Quarter,Dayofyear,Dayofmonth,Weekofyear,Dayofweek,Datehour,WD_Hour,WS_Hour,Temp_Hour,SR_Hour,RH_Hour,NO2):
     
 
    
-    prediction=model_cat.predict([[WD_Hour,WS_Hour,Temp_Hour,SR_Hour,RH_Hour,NO2]])
+    prediction=model_cat.predict([[Year,Month,Quarter,Dayofyear,Dayofmonth,Weekofyear,Dayofweek,Datehour,WD_Hour,WS_Hour,Temp_Hour,SR_Hour,RH_Hour,NO2]])
     print(prediction)
     return prediction
 
@@ -49,6 +49,14 @@ def main():
     </div>
     """
     st.markdown(html_temp,unsafe_allow_html=True)
+    Year = st.text_input("year","Type Here")
+    Month = st.text_input("month","Type Here")
+    Quarter = st.text_input("quarter","Type Here")
+    Dayofyear = st.text_input("dayofyear","Type Here")
+    Dayofmonth = st.text_input("dayofmonth","Type Here")
+    Weekofyear = st.text_input("weekofyear","Type Here")
+    Dayofweek = st.text_input("dayofweek","Type Here")
+    Datehour = st.text_input("datehour","Type Here")
     WD_Hour = st.text_input("WD-Hour","Type Here")
     WS_Hour = st.text_input("WS-Hour","Type Here")
     Temp_Hour = st.text_input("Temp-Hour","Type Here")
@@ -59,12 +67,12 @@ def main():
     
     result=""
     if st.button("Predict"):
-        result=predict_ozone(WD_Hour,WS_Hour,Temp_Hour,SR_Hour,RH_Hour,NO2)
+        result=predict_ozone(Year,Month,Quarter,Dayofyear,Dayofmonth,Weekofyear,Dayofweek,Datehour,WD_Hour,WS_Hour,Temp_Hour,SR_Hour,RH_Hour,NO2)
     st.success('The output is {}'.format(result))
     if st.button("About"):
         #st.text("Author: Ahmed Ewis")
         #st.text("Supervised By: Dr. Fahad Al Fadli and Dr. Nawaf Al Hajri")
-        st.text("Model Name: CatBoost Regressor")
+        st.text("Model Name: XGBoost Regressor")
         st.text("Built and Deployed with: Streamlit")
 
 if __name__=='__main__':
