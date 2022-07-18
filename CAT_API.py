@@ -40,7 +40,7 @@ def predict_ozone(Year,Month,Quarter,Dayofyear,Dayofmonth,Weekofyear,Dayofweek,D
     
 
    
-    prediction=model_cat.predict(Year,Month,Quarter,Dayofyear,Dayofmonth,Weekofyear,Dayofweek,Datehour,WD_Hour,WS_Hour,Temp_Hour,SR_Hour,RH_Hour,NO2)
+    prediction=model_cat.predict([[Year,Month,Quarter,Dayofyear,Dayofmonth,Weekofyear,Dayofweek,Datehour,WD_Hour,WS_Hour,Temp_Hour,SR_Hour,RH_Hour,NO2]])
     print(prediction)
     return prediction
 
@@ -72,7 +72,7 @@ def main():
     
     result=""
     if st.button("Predict"):
-        result=predict_ozone([[Year,Month,Quarter,Dayofyear,Dayofmonth,Weekofyear,Dayofweek,Datehour,WD_Hour,WS_Hour,Temp_Hour,SR_Hour,RH_Hour,NO2]])
+        result=predict_ozone(Year,Month,Quarter,Dayofyear,Dayofmonth,Weekofyear,Dayofweek,Datehour,WD_Hour,WS_Hour,Temp_Hour,SR_Hour,RH_Hour,NO2)
     st.success('The output is {}'.format(result))
     if st.button("About"):
         #st.text("Author: Ahmed Ewis")
