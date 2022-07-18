@@ -26,7 +26,7 @@ st.write("""Kuwait University""")
 #app=Flask(__name__)
 #Swagger(app)
 
-pickle_in = open("Final_tuned_blender_air_pollution_updated.pkl","rb")
+pickle_in = open("Final_tuned_blender_air_pollution.pkl","rb")
 model_cat=pickle.load(pickle_in)
 
 #@app.route('/')
