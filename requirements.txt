@@ -15,5 +15,6 @@ streamlit
 catboost
 pycaret
 jolib
+pickle
 
 
