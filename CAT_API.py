@@ -17,6 +17,7 @@ from sklearn.externals import joblib
 from xgboost import *
 #import joblib
 from pycaret.regression import *
+from pycaret.regression import load_model, predict_model
 
 from PIL import Image
 
@@ -27,8 +28,8 @@ st.write("""Kuwait University""")
 #app=Flask(__name__)
 #Swagger(app)
 
-pickle_in = open("Final_tuned_blender_air_pollution_updated.pkl","rb")
-#pickle_in = load_model('Final_tuned_blender_air_pollution_updated')
+#pickle_in = open("Final_tuned_blender_air_pollution_updated.pkl","rb")
+pickle_in = load_model('Final_tuned_blender_air_pollution_updated')
 model_cat=pickle.load(pickle_in)
 
 #@app.route('/')
