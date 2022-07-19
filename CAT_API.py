@@ -39,11 +39,11 @@ def welcome():
     return "Welcome All"
 
 #@app.route('/predict',methods=["Get"])
-def predict_ozone(year,month,quarter,dayofyear,dayofmonth,weekofyear,dayofweek,datehour,WD_Hour, WS_Hour, Temp_Hour, SR_Hour, RH_Hour,NO2):
+def predict_ozone(year,month,quarter,dayofyear,dayofmonth,weekofyear,dayofweek,datehour,WD_Hour,WS_Hour,Temp_Hour,SR_Hour,RH_Hour,NO2):
     
 
    
-    prediction=model_cat.predict([[year,month,quarter,dayofyear,dayofmonth,weekofyear,dayofweek,datehour,WD_Hour, WS_Hour, TempHour, SR_Hour, RH_Hour,NO2]])
+    prediction=model_cat.predict([[year,month,quarter,dayofyear,dayofmonth,weekofyear,dayofweek,datehour,WD_Hour,WS_Hour,Temp_Hour, SR_Hour,RH_Hour,NO2]])
     #prediction = predict_model(estimator=model_cat,data=df)               
     print(prediction)
     return prediction
