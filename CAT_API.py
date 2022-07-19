@@ -18,7 +18,7 @@ from xgboost import *
 #import joblib
 from pycaret.regression import *
 from pycaret.regression import load_model, predict_model
-df = pd.read_excel('data_air_pollution_cleaned.xlsx)
+df = pd.read_excel('data_air_pollution_cleaned.xlsx')
 
 from PIL import Image
 
