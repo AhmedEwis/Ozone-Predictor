@@ -12,12 +12,12 @@ import pickle
 import pandas as pd
 #from flasgger import Swagger
 import streamlit as st 
-from catboost import CatBoostRegressor
+#from catboost import CatBoostRegressor
 #from sklearn.externals import joblib
 from xgboost import *
 #import joblib
-from pycaret.regression import *
-from pycaret.regression import load_model, predict_model
+#from pycaret.regression import *
+#from pycaret.regression import load_model, predict_model
 df = pd.read_excel('data_air_pollution_cleaned.xlsx')
 
 from PIL import Image
