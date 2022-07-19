@@ -29,7 +29,7 @@ st.write("""Kuwait University""")
 #app=Flask(__name__)
 #Swagger(app)
 
-pickle_in = open("xgb_reg_sklearn.pkl","rb")
+pickle_in = open("xgb_reg_sklearn_updated.pkl","rb")
 #pickle_in = load_model('Final_tuned_blender_air_pollution_updated')
 model_cat=pickle.load(pickle_in)
 #model_cat = load_model('Final_tuned_xgb_air_pollution_updated')
