@@ -18,6 +18,7 @@ from xgboost import *
 #import joblib
 from pycaret.regression import *
 from pycaret.regression import load_model, predict_model
+df = pd.read_excel('data_air_pollution_cleaned.xlsx)
 
 from PIL import Image
 
@@ -28,8 +29,8 @@ st.write("""Kuwait University""")
 #app=Flask(__name__)
 #Swagger(app)
 
-pickle_in = open("Final_tuned_blender_air_pollution_updated.pkl","rb")
-#pickle_in = load_model('Final_tuned_blender_air_pollution_updated')
+#pickle_in = open("Final_tuned_blender_air_pollution_updated.pkl","rb")
+pickle_in = load_model('Final_tuned_blender_air_pollution_updated')
 model_cat=pickle.load(pickle_in)
 #model_cat = load_model('Final_tuned_blender_air_pollution_updated')
 
@@ -42,7 +43,8 @@ def predict_ozone(Year,Month,Quarter,Dayofyear,Dayofmonth,Weekofyear,Dayofweek,D
     
 
    
-    prediction=model_cat.predict([[Year,Month,Quarter,Dayofyear,Dayofmonth,Weekofyear,Dayofweek,Datehour,WD_Hour,WS_Hour,Temp_Hour,SR_Hour,RH_Hour,NO2]])
+    #prediction=model_cat.predict([[Year,Month,Quarter,Dayofyear,Dayofmonth,Weekofyear,Dayofweek,Datehour,WD_Hour,WS_Hour,Temp_Hour,SR_Hour,RH_Hour,NO2]])
+    prediction = predict_model(estimator=model_cat,data=df)               
     print(prediction)
     return prediction
 
