@@ -39,7 +39,7 @@ def welcome():
     return "Welcome All"
 
 #@app.route('/predict',methods=["Get"])
-def predict_ozone(year,month,quarter,dayofyear,dayofmonth,weekofyear,dayofweek,datehour,WD-Hour, WS-Hour, Temp-Hour, SR-Hour, RH-Hour, ):
+def predict_ozone(year,month,quarter,dayofyear,dayofmonth,weekofyear,dayofweek,datehour,WD-Hour, WS-Hour, Temp-Hour, SR-Hour, RH-Hour):
     
 
    
