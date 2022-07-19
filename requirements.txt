@@ -1,4 +1,4 @@
 streamlit
 numpy
-scikit-learn==0.22.1
+scikit-learn
 xgboost
