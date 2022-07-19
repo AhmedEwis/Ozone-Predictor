@@ -2,4 +2,4 @@ pandas>=0.19
 openpyxl
 xlsxwriter
 streamlit
-pycaret
+pycaret==1.0.0
