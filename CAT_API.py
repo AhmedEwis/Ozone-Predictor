@@ -13,7 +13,7 @@ import pandas as pd
 #from flasgger import Swagger
 import streamlit as st 
 from catboost import CatBoostRegressor
-from sklearn.externals import joblib
+#from sklearn.externals import joblib
 from xgboost import *
 #import joblib
 from pycaret.regression import *
