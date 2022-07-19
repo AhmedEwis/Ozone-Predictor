@@ -15,7 +15,7 @@ st.write("""Author: Ahmed Ewis""")
 st.write("""Supervised By: Dr. Fahad Al Fadli and Dr. Nawaf Al Hajri""")
 st.write("""Kuwait University""")
 
-file_name = "air_pollution_xgb_reviewed.pkl"
+file_name = "xgb_reg_sklearn_reviewed.pkl"
 model_cat = pickle.load(open(file_name, "rb"))
 
 #@app.route('/')
