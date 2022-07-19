@@ -43,7 +43,7 @@ def predict_ozone(Year,Month,Quarter,Dayofyear,Dayofmonth,Weekofyear,Dayofweek,D
     
 
    
-    prediction=model_cat.predict([['year','month','quarter','dayofyear','dayofmonth','weekofyear','dayofweek','datehour','WD-Hour', 'WS-Hour', 'Temp-Hour', 'SR-Hour', 'RH-Hour', 'NO2']])
+    prediction=model_cat.predict([[year,month,quarter,dayofyear,dayofmonth,weekofyear,dayofweek,datehour,WD-Hour, WS-Hour, Temp-Hour, SR-Hour, RH-Hour, NO2]])
     #prediction = predict_model(estimator=model_cat,data=df)               
     print(prediction)
     return prediction
