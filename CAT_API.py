@@ -9,31 +9,14 @@ Supervised By: Dr. Fahad Al Fadli
 
 import numpy as np
 import pickle
-import pandas as pd
-#from flasgger import Swagger
 import streamlit as st 
-#from catboost import CatBoostRegressor
-#from sklearn.externals import joblib
-from xgboost import *
-#import joblib
-#from pycaret.regression import *
-#from pycaret.regression import load_model, predict_model
-df = pd.read_excel('data_air_pollution_cleaned.xlsx')
-X, y = df.iloc[:, :-1], df.iloc[:, -1]
-
-from PIL import Image
 
 st.write("""Author: Ahmed Ewis""")
 st.write("""Supervised By: Dr. Fahad Al Fadli and Dr. Nawaf Al Hajri""")
 st.write("""Kuwait University""")
 
-#app=Flask(__name__)
-#Swagger(app)
-
-pickle_in = open("xgb_reg_sklearn_updated.pkl","rb")
-#pickle_in = load_model('Final_tuned_blender_air_pollution_updated')
-model_cat=pickle.load(pickle_in)
-#model_cat = load_model('Final_tuned_xgb_air_pollution_updated')
+file_name = "xgb_reg_sklearn.pkl"
+model_cat = pickle.load(open(file_name, "rb"))
 
 #@app.route('/')
 def welcome():
@@ -42,11 +25,23 @@ def welcome():
 #@app.route('/predict',methods=["Get"])
 def predict_ozone(year,month,quarter,dayofyear,dayofmonth,weekofyear,dayofweek,datehour,WD_Hour,WS_Hour,Temp_Hour,SR_Hour,RH_Hour,NO2):
     
+    test = np.array([[year,\
+    month,\
+    quarter,\
+    dayofyear,\
+    dayofmonth,\
+    weekofyear,\
+    dayofweek,\
+    datehour,\
+    WD_Hour,\
+    WS_Hour,\
+    Temp_Hour,\
+    SR_Hour,\
+    RH_Hour,\
+    NO2]])
+    
+    prediction=model_cat.predict(test)[0] 
 
-   
-    prediction=model_cat.predict([[year,month,quarter,dayofyear,dayofmonth,weekofyear,dayofweek,datehour,WD_Hour,WS_Hour,Temp_Hour,SR_Hour,RH_Hour,NO2]])
-    #prediction = predict_model(estimator=model_cat,data=df)               
-    print(prediction)
     return prediction
 
 
